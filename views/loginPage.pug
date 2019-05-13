@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    center
+        h1= title
+        form(action='/login' method='post')
+            table
+                tr
+                    td
+                        label= 'Email Id: '
+                    td
+                        input(type='email' name='email')
+                tr
+                    td
+                        label= 'Password: '
+                    td
+                        input(type='password' name='password') 
+                tr
+                    td
+                        input(type="submit" value="Log In")

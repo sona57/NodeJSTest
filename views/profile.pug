@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    center
+        h1= title
+        form(action='/editProfile' method='post')
+            table
+                tr
+                    td
+                        label= 'First Name: '
+                    td
+                        input(type='text' value=formData.firstName name='firstName' readonly="readonly")
+                tr
+                    td
+                        label= 'Last Name: '
+                    td
+                        input(type='text' value=formData.lastName name='lastName' readonly="readonly") 
+                tr
+                    td
+                        label= 'E-mail: '
+                    td
+                        input(type='email' value=formData.email name='email' readonly="readonly")
+                tr
+                    td
+                        label= 'Phone Number: '
+                    td
+                        input(type='tel' value=formData.phoneNumber name='phoneNumber' readonly="readonly")
+                tr
+                    td
+                        label= 'Password: '
+                    td
+                        input(type='password' value=formData.password name='password' readonly="readonly")                
+                tr
+                    td(colspan='2')
+                        input(type='submit' value=buttonValue class="widthCss")
+        
+        

@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    center
+        h1= title
+        form(action='/signUp' method='post')
+            table
+                tr
+                    td
+                        input(type='text' placeholder='First name' class="widthCss" value=formData.firstName name='firstName' required )
+                    td
+                        input(type='text' placeholder='Last name' class="widthCss" value=formData.lastName name='lastName' required) 
+                tr
+                    td(colspan='2')
+                        input(type='email' placeholder='E-mail' value=formData.email name='email' required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' class="widthCss")
+                tr
+                    td(colspan='2')
+                        input(type='password' placeholder='Password' name='password' minlength="8" required class="widthCss" value=formData.password)
+                tr
+                    td(colspan='2')
+                        center
+                            label= 'At least 8 characters'
+                tr
+                    td(colspan='2')
+                        input(type='tel' placeholder='Phone number' value=formData.phoneNumber name='phoneNumber' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="widthCss")
+                tr
+                    td(colspan='2')
+                        center
+                            label= 'Optional'
+                tr
+                    td(colspan='2')
+                        center
+                            input(type='checkbox' name='subscribe')
+                            label= 'Subscribe to our newsletter'
+                tr
+                    td(colspan='2')
+                        input(type='submit' value=signUpOrSave class="widthCss")
+        
+        footer(class="marginCss")= 'By clicking sign up you agree to our terms of service'
